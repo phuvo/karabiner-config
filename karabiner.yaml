@@ -1,0 +1,170 @@
+---
+profiles:
+- complex_modifications:
+    rules:
+    - description: Shift + 6/8/9/0 ⇒ Custom symbols
+      manipulators:
+      - from:
+          key_code: '6'
+          modifiers:
+            mandatory: [shift]
+        to:
+        - key_code: '8'
+          modifiers: [left_shift]
+        type: basic
+      - from:
+          key_code: '8'
+          modifiers:
+            mandatory: [shift]
+        to:
+        - key_code: '9'
+          modifiers: [left_shift]
+        type: basic
+      - from:
+          key_code: '9'
+          modifiers:
+            mandatory: [shift]
+        to:
+        - key_code: '0'
+          modifiers: [left_shift]
+        type: basic
+      - from:
+          key_code: '0'
+          modifiers:
+            mandatory: [shift]
+        to:
+        - key_code: '6'
+          modifiers: [left_shift]
+        type: basic
+    - description: Caps lock + Delete ⇒ Delete word
+      manipulators:
+      - from:
+          key_code: delete_or_backspace
+          modifiers:
+            mandatory: [right_command]
+        to:
+        - key_code: delete_or_backspace
+          modifiers: [option]
+        type: basic
+      - from:
+          key_code: delete_forward
+          modifiers:
+            mandatory: [right_command]
+        to:
+        - key_code: delete_forward
+          modifiers: [option]
+        type: basic
+    - description: Caps lock + Left/Right ⇒ Move by word
+      manipulators:
+      - from:
+          key_code: left_arrow
+          modifiers:
+            mandatory: [right_command]
+        to:
+        - key_code: left_arrow
+          modifiers: [option]
+        type: basic
+      - from:
+          key_code: right_arrow
+          modifiers:
+            mandatory: [right_command]
+        to:
+        - key_code: right_arrow
+          modifiers: [option]
+        type: basic
+    - description: Caps lock + H ⇒ Raycast
+      manipulators:
+      - from:
+          key_code: j
+          modifiers:
+            mandatory: [right_command]
+        to:
+        - key_code: j
+          modifiers: [control, option, shift]
+        type: basic
+    - description: Option + Tab ⇒ Mission Control
+      manipulators:
+      - from:
+          key_code: tab
+          modifiers:
+            mandatory: [option]
+        to:
+        - key_code: up_arrow
+          modifiers: [left_control]
+        type: basic
+    - description: Option + L ⇒ Lock Screen
+      manipulators:
+      - from:
+          key_code: p
+          modifiers:
+            mandatory: [option]
+        to:
+        - key_code: x
+          modifiers: [left_control, left_command]
+        type: basic
+    - description: Right Shift + Enter ⇒ Enter
+      manipulators:
+      - from:
+          key_code: return_or_enter
+          modifiers:
+            mandatory: [right_shift]
+        to:
+        - key_code: return_or_enter
+        type: basic
+    - description: Insert ⇒ Shift + Enter
+      manipulators:
+      - from:
+          key_code: insert
+        to:
+        - key_code: return_or_enter
+          modifiers: [left_shift]
+        type: basic
+  devices:
+  - identifiers:
+      is_keyboard: true
+      is_pointing_device: true
+      product_id: 65278
+      vendor_id: 3141
+    ignore: false
+    ignore_vendor_events: true
+  name: Default profile
+  selected: true
+  simple_modifications:
+  - from:
+      key_code: application
+    to:
+    - key_code: right_option
+  - from:
+      key_code: caps_lock
+    to:
+    - key_code: right_command
+  - from:
+      key_code: left_command
+    to:
+    - key_code: left_option
+  - from:
+      key_code: left_option
+    to:
+    - key_code: left_command
+  - from:
+      key_code: pause
+    to:
+    - consumer_key_code: volume_increment
+  - from:
+      key_code: print_screen
+    to:
+    - consumer_key_code: mute
+  - from:
+      key_code: right_control
+    to:
+    - apple_vendor_top_case_key_code: keyboard_fn
+  - from:
+      key_code: scroll_lock
+    to:
+    - consumer_key_code: volume_decrement
+  - from:
+      key_code: right_option
+    to:
+    - key_code: right_command
+  virtual_hid_keyboard:
+    keyboard_type_v2: ansi
