@@ -151,6 +151,19 @@ profiles:
       vendor_id: 3141
     ignore: false
     ignore_vendor_events: true
+    simple_modifications:
+    - from:
+        key_code: left_command
+      to:
+      - key_code: left_option
+    - from:
+        key_code: left_option
+      to:
+      - key_code: left_command
+    - from:
+        key_code: right_option
+      to:
+      - key_code: right_command
   name: Default profile
   selected: true
   simple_modifications:
@@ -163,14 +176,6 @@ profiles:
     to:
     - key_code: right_command
   - from:
-      key_code: left_command
-    to:
-    - key_code: left_option
-  - from:
-      key_code: left_option
-    to:
-    - key_code: left_command
-  - from:
       key_code: pause
     to:
     - consumer_key_code: volume_increment
@@ -179,16 +184,8 @@ profiles:
     to:
     - consumer_key_code: mute
   - from:
-      key_code: right_control
-    to:
-    - apple_vendor_top_case_key_code: keyboard_fn
-  - from:
       key_code: scroll_lock
     to:
     - consumer_key_code: volume_decrement
-  - from:
-      key_code: right_option
-    to:
-    - key_code: right_command
   virtual_hid_keyboard:
     keyboard_type_v2: ansi
